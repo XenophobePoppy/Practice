@@ -32,13 +32,17 @@ public class RemoveDuplicate {
 	}
 
 	public static void main(String args[]) {
-//		LinkedListNode list = new LinkedListNode(5);
+//		LinkedListNode list = new LinkedListNode();
 		LinkedListNode a1 = new LinkedListNode(1);
 		LinkedListNode a2 = new LinkedListNode(2);
 		LinkedListNode a3 = new LinkedListNode(2);
 		LinkedListNode a4 = new LinkedListNode(3);
 		LinkedListNode a5 = new LinkedListNode(4);
 
+//		LinkedListNode a1 = new LinkedListNode();
+		
+		
+		
 		a1.next = a2;
 		a2.next = a3;
 		a3.next = a4;

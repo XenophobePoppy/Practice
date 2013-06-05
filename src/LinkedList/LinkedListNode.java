@@ -22,7 +22,9 @@ public class LinkedListNode {
 	{
 		this.next = node;
 	}
-	
+//	public LinkedListNode() {
+//		// TODO Auto-generated constructor stub
+//	}
 	
 //	public LinkedListNode add(int data){
 //		LinkedListNode temp = head;
