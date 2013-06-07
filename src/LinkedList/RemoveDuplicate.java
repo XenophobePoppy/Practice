@@ -8,15 +8,16 @@ public class RemoveDuplicate {
 		LinkedListNode current = head;
 		while (current != null) {
 			if (table.containsKey(current.data)) {
-				current = current.next.next;
+				current = current.next;
 			} else {
 				table.put(current.data, true);
+				System.out.print(current.data);
 				current = current.next;
 			}
 		}
 	}
 
-	public void removedups1(LinkedListNode node) {
+	public static void removedups1(LinkedListNode node) {
 		Hashtable<Integer, Boolean> table = new Hashtable<Integer, Boolean>();
 		LinkedListNode previous = null;
 
@@ -25,11 +26,33 @@ public class RemoveDuplicate {
 				previous.next = node.next;
 			} else {
 				table.put(node.data, true);
+				System.out.print(node.data);
 				previous = node;
 			}
 			node = node.next;
 		}
 	}
+	
+	public static void removedups_without_buffer(LinkedListNode node){
+		if(node==null){
+			return;
+		}
+		
+		LinkedListNode current=node;
+		while(current !=null){
+			LinkedListNode runner = current;
+			while(runner.next !=null){
+				if(runner.next.data==current.data)
+					runner.next=runner.next.next;
+					
+				else
+					runner=runner.next;
+				}
+			System.out.println(current.data);
+			current=current.next;
+			}
+		}
+	
 
 	public static void main(String args[]) {
 //		LinkedListNode list = new LinkedListNode();
@@ -49,10 +72,10 @@ public class RemoveDuplicate {
 		a4.next = a5;
 		
 		removedups(a1);
-		LinkedListNode temp = a1;
-		while(temp != null){
-			System.out.print(temp.data);
-			temp=temp.next;
-		}
+		System.out.println();
+		removedups1(a1);
+		System.out.println();
+		removedups_without_buffer(a1);
+		
 	}
 }
